@@ -3,6 +3,18 @@
 This repository is used to organize the various branding and marketing materials
 of The Four Fifths, a senior design team at the Milwaukee School of Engineering.
 
+Our product name is Consus, and our goal is to create an application that will
+modernize MSOE's Tech Support inventory management system by streamlining the
+process to check in and out items and provide a way to monitor inventory. Key
+features of our system will include:
+- Barcode/RFID scanners that scan both student's IDs and equipment barcodes
+- Notifications for students to return equipment before Tech Support closes
+- Tracking location all pieces of Tech Support equipment
+- Maintaining information such as manufacturer and defects/faults
+- Maintaining a list of all equipment checked out by each student
+- Tracking all overdue equipment and prevent students with overdue equipment
+  from checking out new items
+
 ## Name
 
 ### Team
