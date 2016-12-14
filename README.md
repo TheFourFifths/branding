@@ -15,14 +15,14 @@ features of our system will include:
 - Tracking all overdue equipment and prevent students with overdue equipment
   from checking out new items
 
-## Name
+## Etymology
 
-### Team
+### Team name
 The official name of the team is "The Four Fifths". The story behind
 the name is that, statistically speaking, the majority of the of the time there
 have only been 4 members in any given team meeting.
 
-### Product
+### Product name
 The official name of the product is "Consus". Consus was the protector of grains
 in ancient Roman religion, and is represented by the grain seed. Although the
 etymology of Consus is uncertain, the name is related to the Latin verb
