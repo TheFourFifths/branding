@@ -1,0 +1,12 @@
+% vim: set spell ft=tex
+\section{Source Code}
+\label{app:source_code}
+
+All the source code for Consus is open source and freely available at \url{https://github.com/TheFourFifths}.
+
+Consus server is an Express server built on Node.js in the JavaScript language.
+Consus client is a React app built in Electron also in the JavaScript language.
+Both client and server are implemented using the Flux architecture which permits only a one-way flow of data.
+Actions are generated from the REST API and passed to the database which keeps persistence of all data, then the action is sent to the dispatcher which dispatches these actions to each data store that subscribes to a particular action type.
+In the client, the database does not exist because data persistence is maintained by the server.
+The client also has views that the data stores update when the stores receive relevant actions.

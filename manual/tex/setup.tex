@@ -1,0 +1,32 @@
+% vim: set ft=tex spell
+\section{Provisioning}
+\label{sec:provisioning}
+
+This section will describe how to provision a fully functional Consus inventory management system.
+Consus is comprised of two parts: a server and a client.
+
+Whilst it is possible to run a Consus server and client on ``Computer A'' and only a Consus client on ``Computer B'', we do not recommend it. % TODO why?
+If you want to use multiple check-out stations, we recommend that you have a dedicated Consus server; that is, do not run a Consus server and Consus client on the same computer.
+
+Otherwise, if you are only using one check-out station, you can run the Consus server and client on the same computer.
+
+\subsection{Server}
+\label{subsec:server_provision}
+
+The Consus server is where all the magic happens; it performs all the business logic for Consus.
+The server is required so that it is possible to have multiple client check-out stations working concurrently with the same data.
+For instructions on provisioning a Consus client, see~\autoref{subsec:client_provision}.
+
+\subsubsection{Requirements}
+
+\blindtext%
+
+\subsection{Client}
+\label{subsec:client_provision}
+
+The Consus client is where you as the user get a pretty\footnote{Beauty is subjective, okay?} view of the data on the Consus server.
+Since the client doesn't keep any data, a server is also required (see~\autoref{subsec:server_provision}).
+
+\subsubsection{Requirements}
+
+\blindtext%

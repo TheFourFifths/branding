@@ -1,0 +1,43 @@
+% vim: ft=tex
+\documentclass[11pt,letterpaper,twoside]{article}
+
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{csquotes}
+\usepackage{emptypage}
+\usepackage{microtype}
+\usepackage{newcent}
+\usepackage{blindtext}
+
+\hypersetup{%
+  colorlinks=true,
+  pdfauthor={The Four Fifths},
+  pdftitle={Consus Manual},
+  pdfkeywords={Consus,manual,Four Fifths,inventory}
+}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\begin{document}
+\input{./tex/titlepage}
+
+\pagestyle{headings}
+
+\tableofcontents
+\pagenumbering{roman}
+\cleardoublepage%
+
+\pagenumbering{arabic}
+
+\input{./tex/introduction}
+\input{./tex/setup}
+\input{./tex/configuration}
+
+\cleardoublepage%
+\appendix
+
+\input{./tex/github}
+
+\end{document}
