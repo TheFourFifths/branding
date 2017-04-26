@@ -1,0 +1,74 @@
+% vim: ft=tex spell
+\chapter{Provisioning}
+\label{ch:provisioning}
+
+This section will describe how to provision a fully functional Consus inventory management system.
+Consus is comprised of two parts: a server and a client.
+
+Whilst it is possible to run a Consus server and client on ``Computer A'' and only a Consus client on ``Computer B'', we do not recommend it. % TODO why?
+If you want to use multiple check-out stations, we recommend that you have a dedicated Consus server; that is, do not run a Consus server and Consus client on the same computer.
+
+Otherwise, if you are only using one check-out station, you can run the Consus server and client on the same computer.
+
+\section{Server}
+\label{sec:server_provision}
+
+The Consus server is where all the magic happens; it performs all the business logic for Consus.
+The server is required so that it is possible to have multiple client check-out stations working concurrently with the same data.
+For instructions on provisioning a Consus client, see~\autoref{sec:client_provision}.
+
+\subsection{Requirements}
+\label{subsec:server_reqs}
+
+\begin{itemize}
+  \item Node.js 6, or later
+  \item npm
+\end{itemize}
+
+\subsection{Installation \& Automation}
+\label{subsec:server_install}
+
+Installation and setup is damn simple for the Consus server.
+This section will describe how to install the server and setup a task for Windows to automatically start the server whenever the computer starts.
+
+\begin{enumerate}
+  \item Open the Command Prompt and run \texttt{npm install -g consus}
+  \item Open Task Scheduler
+  \item Click ``Create a Basic Task\ldots''
+  \item Enter an appropriate name and description, such as \texttt{Consus server}. Click Next.
+  \item Select ``When the computer starts''. Click Next.
+  \item TODO
+  \item Enter \texttt{consusd start} in the ``Program/script'' textbox. Click Next.
+  \item TODO
+\end{enumerate}
+
+To start the server immediately, right-click on the task under ``Task Status'' and select ``TODO''.
+\marginnote{Don't forget to change the config file!}
+
+\section{Client}
+\label{sec:client_provision}
+
+The Consus client is where you as the user get a pretty\footnote{Beauty is subjective, okay?} view of the data on the Consus server.
+Since the client doesn't keep any data, a server is also required (see~\autoref{sec:server_provision}).
+
+\subsection{Requirements}
+\label{subsec:client_reqa}
+
+\begin{itemize}
+  \item A Windows 7, or better, computer
+\end{itemize}
+
+\subsection{Installation}
+\label{subsec:client_install}
+
+\begin{enumerate}
+  \item Go to \url{https://git.io/v9YZ0}.
+  \item Download the Windows build; it will have a name like \texttt{Consus-Client-win.zip}.
+  \item Extract the ZIP archive into a convenient directory, such as, \texttt{Desktop} or \texttt{C:\textbackslash{}Program Files\textbackslash{}Consus Client}.
+  \item Navigate into the \texttt{Consus-Client-win32-x64} directory.
+  \item Right-click on \texttt{Consus-Client.exe} and select ``Create shortcut''.
+  \item Move the created shortcut to the Desktop, or someplace easily accessible.
+\end{enumerate}
+
+The Consus client can now be started by double-clicking the shortcut.
+\marginnote{Don't forget to change the config file!}
