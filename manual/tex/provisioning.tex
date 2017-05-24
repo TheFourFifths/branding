@@ -23,7 +23,16 @@ For instructions on provisioning a Consus client, see~\autoref{sec:client_provis
 \begin{itemize}
   \item Node.js 6, or later
   \item npm
+  \item Gmail account
+  \item Mailgun account
 \end{itemize}
+
+\subsection{Setup}
+\label{subsec:server_setup}
+
+Consus needs uses the Mailgun service to send emails and a Gmail account for email service.
+You must create a Mailgun account (\url{https://app.mailgun.com/new/signup/}) and a Gmail account (\url{https://accounts.google.com/SignUp}).
+Since their processes are likely to change, please refer to their help documentation on their websites.
 
 \subsection{Installation \& Automation}
 \label{subsec:server_install}
@@ -37,13 +46,14 @@ This section will describe how to install the server and setup a task for Window
   \item Click ``Create a Basic Task\ldots''
   \item Enter an appropriate name and description, such as \texttt{Consus server}. Click Next.
   \item Select ``When the computer starts''. Click Next.
-  \item TODO
+  % \item TODO
   \item Enter \texttt{consusd start} in the ``Program/script'' textbox. Click Next.
-  \item TODO
+  % \item TODO
 \end{enumerate}
 
-To start the server immediately, right-click on the task under ``Task Status'' and select ``TODO''.
-\marginnote{Don't forget to change the config file!}
+To start the server immediately, right-click on the task under ``Task Status'' and select ``Start''.
+
+Make sure the settings in the configuration file is correct; see~\autoref{sec:config}.
 
 \section{Client}
 \label{sec:client_provision}
@@ -64,11 +74,12 @@ Since the client doesn't keep any data, a server is also required (see~\autoref{
 \begin{enumerate}
   \item Go to \url{https://git.io/v9YZ0}.
   \item Download the Windows build; it will have a name like \texttt{Consus-Client-win.zip}.
-  \item Extract the ZIP archive into a convenient directory, such as, \texttt{Desktop} or \texttt{C:\textbackslash{}Program Files\textbackslash{}Consus Client}.
-  \item Navigate into the \texttt{Consus-Client-win32-x64} directory.
-  \item Right-click on \texttt{Consus-Client.exe} and select ``Create shortcut''.
-  \item Move the created shortcut to the Desktop, or someplace easily accessible.
+  \item Extract the ZIP archive into \texttt{C:\textbackslash{}Program Files\textbackslash{}Consus Client}.
+  \item Go to \url{https://github.com/TheFourFifths/consus-client} and download the ZIP of the repository.
+  \item Extract the contents of \texttt{./config} directory, and place it in \texttt{\%USERPROFILE\%\textbackslash{}Consus Client config}.
+  \item Move the \texttt{./bin/launch.bat} script to your Desktop to easily launch the Consus client.
 \end{enumerate}
 
+Make sure the settings in the configuration file is correct; see~\autoref{sec:config}.
+
 The Consus client can now be started by double-clicking the shortcut.
-\marginnote{Don't forget to change the config file!}

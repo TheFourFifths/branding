@@ -5,14 +5,16 @@
 To ease the maintenance and setup of Consus, you can use configuration files to change some aspects of the software.
 All config files are located in the \texttt{config} directory of each repository's source code.
 
+The default location of this directory is listed at the start of the following subsections.
+If you prefer, you can override the config directory by setting the \texttt{NODE\_CONFIG\_DIR} environment variable, but this will only work correctly if only the server \emph{or} client is running on a host machine.
+If you do choose a different directory, copy the file from the default directory into the new one.
+
 The file is formatted in Tom's Obvious, Minimal Language~(TOML).
 Refer to \url{https://git.io/vSKUH} on how to properly format a TOML file.
 
 The config file loading system is robust.
 For most purposes if you need to change a variable, you can make that change in the \texttt{config/local.toml} file.
 If the simple \texttt{config/local.toml} configuration does not meet your needs, you can refer to \url{https://git.io/vSKUM}.
-
-% TODO mention _real_ location of config directory for server & client
 
 The configuration system can also use your system's environment variables to set values.
 The mapping of environment variable to config value name is specified in \texttt{config/custom-environment-variables.toml}.
@@ -23,6 +25,8 @@ If you are unsure about anything refer to the config files we have created in \t
 
 \subsection{Server}
 \label{subsec:server_config}
+
+The server's config file is located at \texttt{consus/config} under the directory printed by running \texttt{npm root -g} at a command prompt.
 
 \begin{description}
   \item[timezone] The timezone to represent all times in.
