@@ -1,0 +1,148 @@
+% vim: spell ft=tex
+\section{Configuration}
+\label{sec:config}
+
+To ease the maintenance and setup of Consus, you can use configuration files to change some aspects of the software.
+All config files are located in the \texttt{config} directory of each repository's source code.
+
+The default location of this directory is listed at the start of the following subsections.
+If you prefer, you can override the config directory by setting the \texttt{NODE\_CONFIG\_DIR} environment variable, but this will only work correctly if only the server \emph{or} client is running on a host machine.
+If you do choose a different directory, copy the file from the default directory into the new one.
+
+The file is formatted in Tom's Obvious, Minimal Language~(TOML).
+Refer to \url{https://git.io/vSKUH} on how to properly format a TOML file.
+
+The config file loading system is robust.
+For most purposes if you need to change a variable, you can make that change in the \texttt{config/local.toml} file.
+If the simple \texttt{config/local.toml} configuration does not meet your needs, you can refer to \url{https://git.io/vSKUM}.
+
+The configuration system can also use your system's environment variables to set values.
+The mapping of environment variable to config value name is specified in \texttt{config/custom-environment-variables.toml}.
+These environment variable mappings override all other settings from other config files.
+For more details, refer to \url{https://git.io/vSKTJ}.
+
+If you are unsure about anything refer to the config files we have created in \texttt{config} directory.
+
+\subsection{Server}
+\label{subsec:server_config}
+
+The server's config file is located at \texttt{consus/config} under the directory printed by running \texttt{npm root -g} at a command prompt.
+
+\begin{description}
+  \item[timezone] The timezone to represent all times in.
+    Valid time zones are listed under the TZ column at \url{https://en.wikipedia.org/wiki/List_of_tz_database_time_zones}.\\
+    Default value: ``America/Chicago''
+\end{description}
+
+\subsubsection{Assets}
+\label{subsubsec:server_config_assets}
+
+\begin{description}
+  \item[model\_photo\_directory] The location of where the model photos should be stored.\\
+    Default value: \texttt{assets/img}
+\end{description}
+
+\subsubsection{Check-in}
+\label{subsubsec:server_config_checkin}
+
+\begin{description}
+  \item[due\_hour] The hour equipment is due back, as 24-hour local time.\\
+    Default value: 17
+  \item[due\_minute] The minute equipment is due back, as 24-hour local time.\\
+    Default value: 00
+\end{description}
+
+\subsubsection{Notifications}
+\label{subsubsec:server_config_notifications}
+
+\paragraph{Gmail}
+\label{par:gmail_notifications}
+
+\begin{description}
+  \item[user] The email address for the Gmail account used for sending notification mail.\\
+    Default value: \texttt{example@gmail.com}, or the \texttt{GMAIL\_USER} environment variable
+  \item[password] The password for the Gmail account.\\
+    Default value: ``Pack my box with five dozen liquor jugs'', or the \texttt{GMAIL\_PASSWORD} environment variable
+  \item[recipient] The email address to receive and forward notifications.\\
+    Default value: \texttt{person@example.com}, or the \texttt{EMAIL\_RECIPIENT} environment variable
+\end{description}
+
+\subsubsection{Server}
+\label{subsubsec:server_config_server}
+
+\begin{description}
+  \item[ip] The IP address the Consus server should listen on.\\
+    Default value: 0.0.0.0
+  \item[port] The port the Consus server should listen on.\\
+    Default value: 8000
+  \item[max\_payload\_size] The maximum payload size received from a client is allowed to be.
+    This may affect the processing of model photos when there is also a large model description.\\
+    Default value: 1.5\,MB
+  \item[pid\_file] The location to save the PID file.\\
+    Default value: \texttt{consus.pid}
+\end{description}
+
+\subsubsection{Student}
+\label{subsubsec:server_config_student}
+
+\begin{description}
+  \item[active\_status] The string that identifies a student as currently enrolled.
+    Consult the document used to import students.\\
+    Default value: ``C - Current''
+\end{description}
+
+\subsection{Client}
+\label{subsec:client_config}
+
+\begin{description}
+  \item[timezone] The timezone to represent all times in.
+    Valid time zones are listed under the TZ column at \url{https://en.wikipedia.org/wiki/List_of_tz_database_time_zones}.\\
+    Default value: ``America/Chicago''
+\end{description}
+
+\subsubsection{Assets}
+\label{subsubsec:client_config_assets}
+
+\begin{description}
+  \item[max\_model\_photo\_size] The maximum size allowed for model photos (kilobytes).\\
+    Default value: 950\,kB
+\end{description}
+
+\subsubsection{Cart}
+\label{subsubsec:client_config_cart}
+
+\begin{description}
+  \item[timeout] The carts timeout.
+    How many seconds should elapse before pending equipment in a student's cart is check out to them.\\
+    Default value: 60\,seconds
+\end{description}
+
+\subsubsection{Check-in}
+\label{subsubsec:client_config_checkin}
+
+\begin{description}
+  \item[due\_hour] The hour equipment is due back, as 24-hour local time.\\
+    Default value: 17
+  \item[due\_minute] The minute equipment is due back, as 24-hour local time.\\
+    Default value: 00
+\end{description}
+
+\subsubsection{Server}
+\label{subsubsec:client_config_server}
+
+\begin{description}
+  \item[ip] The IP address of the Consus server to connect to.\\
+    Default value: localhost
+  \item[port] The port of the Consus server to connect to.\\
+    Default value: 8000
+  \item[protocol] The protocol of the Consus server to connect to.\\
+    Default value: HTTP
+\end{description}
+
+\subsubsection{Toast}
+\label{subsubsec:client_config_toast}
+
+\begin{description}
+  \item[timeout] How many seconds should a toast message be displayed before automatically disappearing.\\
+    Default value: 5\,seconds
+\end{description}
